@@ -1,1 +1,2 @@
 # Studying_java_servlet
+javaのサーブレットの学習を行う専用リポジトリ
