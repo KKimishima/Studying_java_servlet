@@ -30,6 +30,25 @@
          <h1>フォームからpostメソッド送信</h1>
          <a href="/StudyingServlet/jsp/FormSample.jsp">ページを開く</a>
       </section>
+      <section>
+         <h1>リクエスからのフォアード</h1>
+            <a href="/StudyingServlet/Forwarded">ページを開く</a>
+       </section>
+        <section>
+          <h1>リクエスからのリダイレクト練習</h1>
+          <p>占いアプリケーションにリダレクト</p>
+             <a href="/StudyingServlet/UranaiApp">ページを開く</a>
+        </section>
+        <section>
+           <h1>MVC練習</h1>
+            <p>MVCを利用して健康診断アプリ</p>
+                <a href="/StudyingServlet/HealthCheck">ページを開く</a>
+        </section>
+        <section>
+            <h1>セッションごとのスコープ</h1>
+            <p>ユーザ登録</p>
+                <a href="/StudyingServlet/RegisterUser">ページを開く</a>
+        </section>
     </div>
 </body>
 </html>
