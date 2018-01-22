@@ -49,6 +49,11 @@
             <p>ユーザ登録</p>
                 <a href="/StudyingServlet/RegisterUser">ページを開く</a>
         </section>
+        <section>
+            <h1>アプリケーションごとののスコープ</h1>
+            <p>いいねシステム</p>
+            <a href="/StudyingServlet/RegisterUser">ページを開く</a>
+        </section>
     </div>
 </body>
 </html>
