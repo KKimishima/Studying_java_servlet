@@ -1,10 +1,13 @@
-package com.github.KKimishima.model;
+package com.github.KKimishima.iineModel;
 
-public class SiteI {
+import java.io.Serializable;
+
+public class SiteI implements Serializable{
   private int like;
   private int dislike;
   public SiteI(){
-
+    this.like =0;
+    this.dislike =0;
   }
 
   public int getLike() {

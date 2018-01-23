@@ -52,8 +52,13 @@
         <section>
             <h1>アプリケーションごとののスコープ</h1>
             <p>いいねシステム</p>
-            <a href="/StudyingServlet/RegisterUser">ページを開く</a>
+            <a href="/StudyingServlet/IineIServe"">ページを開く</a>
         </section>
+         <section>
+            <h1>総合テスト</h1>
+                <p>つぶやきシステム</p>
+                <a href="/StudyingServlet/jsp/TsubuIndex.jsp">ページを開く</a>
+          </section>
     </div>
 </body>
 </html>

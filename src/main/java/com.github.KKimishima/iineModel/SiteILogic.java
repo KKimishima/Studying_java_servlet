@@ -1,4 +1,6 @@
-package com.github.KKimishima.model;
+package com.github.KKimishima.iineModel;
+
+import com.github.KKimishima.iineModel.SiteI;
 
 public class SiteILogic {
   public void like(SiteI siteI){
