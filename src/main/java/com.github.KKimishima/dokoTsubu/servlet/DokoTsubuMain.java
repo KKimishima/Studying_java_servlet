@@ -1,5 +1,6 @@
 package com.github.KKimishima.dokoTsubu.servlet;
 
+import com.github.KKimishima.dokoTsubu.model.PostLogic;
 import com.github.KKimishima.dokoTsubu.model.Tsubu;
 import com.github.KKimishima.dokoTsubu.model.User;
 
@@ -44,5 +45,37 @@ public class DokoTsubuMain extends HttpServlet{
       );
       rd.forward(req,resp);
     }
+  }
+
+  @Override
+  protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    // リクエスト値の取得
+    req.setCharacterEncoding("UTF-8");
+    String text = req.getParameter("text");
+
+    System.out.print(text);
+
+    // 入力値のチェック
+    if(text != null && text.length() != 0){
+      // アプリケーションスコープに保存されているリストを取得
+      ServletContext app = req.getServletContext();
+      List<Tsubu> tsubuListt = (List<Tsubu>) app.getAttribute("tsubu");
+
+      // セッションスコープに保存されているユーザ情報を取得
+      HttpSession session = req.getSession();
+      User user = (User) session.getAttribute("user");
+
+      // つぶやきをリストに追加
+      Tsubu tsubu = new Tsubu(user.getName(),text);
+      PostLogic postLogic = new PostLogic();
+      postLogic.exexcute(tsubu,tsubuListt);
+    }else {
+      req.setAttribute("errorMs","つぶやきを入力してください");
+    }
+    //メイン画面にフォワード
+    RequestDispatcher rd = req.getRequestDispatcher(
+      "/WEB-INF/jsp/DokoTsubuMain.jsp"
+    );
+    rd.forward(req,resp);
   }
 }
