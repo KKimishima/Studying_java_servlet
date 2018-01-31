@@ -2,7 +2,7 @@ package com.github.KKimishima.dokoTsubuDB.model.DAO;
 
 import java.sql.*;
 
-public class TubuyakiDAO {
+public class UserDAO {
   private final String jdbcURL = "jdbc:h2:file:/Volumes/data/Repo/Studying_java_servlet/src/main/resources/db/db";
   //private final String jdbcURL = "jdbc:h2:file:~/h2test/db";
   private final String jdbcDriver = "org.h2.Driver";
@@ -10,11 +10,11 @@ public class TubuyakiDAO {
   private final String dbPass = "";
 
   public Boolean execute(String name,String pass){
-    try{
-      Class.forName(jdbcDriver);
-    }catch (ClassNotFoundException e){
-      e.printStackTrace();
-    }
+    //try{
+    //  Class.forName("org.h2.Driver");
+    //}catch (ClassNotFoundException e){
+    //  e.printStackTrace();
+    //}
 
     Connection con = null;
     try{
@@ -22,6 +22,9 @@ public class TubuyakiDAO {
       PreparedStatement ps = con.prepareStatement(
           "select * from USER where NAME = ? and PASS = ?;"
       );
+      ps.setString(1,name);
+      ps.setString(2,pass);
+
       ResultSet rs = ps.executeQuery();
 
       if(rs.next()){

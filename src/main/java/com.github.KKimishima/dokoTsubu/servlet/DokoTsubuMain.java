@@ -1,13 +1,9 @@
 package com.github.KKimishima.dokoTsubu.servlet;
 
-import com.github.KKimishima.dokoTsubu.model.PostLogic;
-import com.github.KKimishima.dokoTsubu.model.Tsubu;
-import com.github.KKimishima.dokoTsubu.model.User;
+import com.github.KKimishima.dokoTsubu.model.*;
 
 import javax.jws.WebService;
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
+import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,10 +18,29 @@ public class DokoTsubuMain extends HttpServlet{
   private static final long serialVersionUID = 1L;
 
   @Override
+  public void init(ServletConfig config) throws ServletException {
+    super.init(config);
+    // 訪問回数
+    // アプロケーションスコープに保存
+    InitTest initTest = new InitTest();
+    ServletContext app = config.getServletContext();
+    app.setAttribute("initTest", initTest);
+    System.out.println("初期化実行");
+
+  }
+
+  @Override
+  public void destroy() {
+    System.out.println("インスタンスの廃棄");
+  }
+
+  @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     // つぶやきリストを取得
     ServletContext app = this.getServletContext();
     List<Tsubu> tsubuList = (List<Tsubu>)app.getAttribute("tsubu");
+    InitTest initTest = (InitTest) app.getAttribute("initTest");
+
 
     // 取得できなかった場合、新規作成して保存
     if (tsubuList == null){
@@ -40,6 +55,10 @@ public class DokoTsubuMain extends HttpServlet{
     if (user == null){
       resp.sendRedirect("/StudyingServlet/jsp/TsubuIndex.jsp");
     }else{
+      InitLogic initLogic = new InitLogic();
+      initLogic.execute(initTest);
+      app.setAttribute("initTest",initTest);
+
       RequestDispatcher rd = req.getRequestDispatcher(
           "/WEB-INF/jsp/DokoTsubuMain.jsp"
       );

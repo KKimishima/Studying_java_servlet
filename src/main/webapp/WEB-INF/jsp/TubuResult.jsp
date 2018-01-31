@@ -4,15 +4,9 @@
    User user = (User) session.getAttribute("user");
 %>
 
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>つぶやきシステムログイン結果</title>
-</head>
+<jsp:include page="/WEB-INF/jsp/DokoTsubuHead.jsp" />
 <body>
+    <jsp:include page="/WEB-INF/jsp/DokoTsubuHeder.jsp" />
     <h1>つぶやきシステムログイン</h1>
     <%if(user != null){%>
     <h2>ログイン成功</h2>
@@ -23,5 +17,7 @@
     <p>正しいユーザ名とパスワードを入力したください!!</p>
         <a href="/StudyingServlet/jsp/TsubuIndex.jsp">Topへ</a>
     <%}%>
+
+    <jsp:include page="/WEB-INF/jsp/DokoTsubuFooter.jsp" />
 </body>
 </html>

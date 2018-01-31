@@ -1,4 +1,4 @@
-package com.github.KKimishima.dokoTsubuDB.model;
+package com.github.KKimishima.dokoTsubuDB.model.bean;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.github.KKimishima.dokoTsubuDB.servlet;
+package com.github.KKimishima.dokoTsubuDB.servlet.dokoTsubuDB;
 
 import com.github.KKimishima.dokoTsubuDB.model.bean.User;
 import com.github.KKimishima.dokoTsubuDB.model.logic.LoginLogic;
@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/dokoTsubLoginDB")
-public class dokoTsubLoginDB extends HttpServlet{
+@WebServlet("/dokoTsubuDB/Login")
+public class Login extends HttpServlet{
   private static final long serialVersion =1l;
 
   @Override

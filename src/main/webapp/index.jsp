@@ -59,6 +59,11 @@
                 <p>つぶやきシステム</p>
                 <a href="/StudyingServlet/jsp/TsubuIndex.jsp">ページを開く</a>
           </section>
+         <section>
+            <h1>DBテスト</h1>
+                <p>つぶやきシステム</p>
+                <a href="/StudyingServlet/jsp/TsubuDBIndex.jsp">ページを開く</a>
+          </section>
     </div>
 </body>
 </html>
