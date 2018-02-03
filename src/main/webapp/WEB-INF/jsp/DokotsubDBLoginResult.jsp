@@ -8,7 +8,7 @@
     <c:if test="${not empty user}" >
     <h2>ログイン成功</h2>
     <p>ようこそつぶやきシステム</p>
-    <a href="/StudyingServlet/DokoTsubuDBMain">メインページへ</a>
+    <a href="/StudyingServlet/dokoTsubuDB/MainPage"">メインページへ</a>
     </c:if>
 
     <c:if test="${empty user}" >

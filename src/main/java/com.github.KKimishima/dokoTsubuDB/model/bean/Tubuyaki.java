@@ -8,7 +8,7 @@ public class Tubuyaki implements Serializable{
   private String userName;
 
   public Tubuyaki(){}
-  public Tubuyaki(int id,String tex,String userName){
+  public Tubuyaki(String userName,String tex){
     this.id = id;
     this.tex = tex;
     this.userName = userName;
